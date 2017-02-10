@@ -15,6 +15,7 @@ public class ListActivity extends AppCompatActivity {
 
     ListView listView;
 
+    // 요일 데이터 입력
     String array[] = {"월", "화", "수", "목", "금", "토", "일"};
 
     @Override
@@ -22,17 +23,28 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+        /*
+        ListView 절차.
+
+        1. ListView를 가져온다
+        2. Adapter를 정의한다.
+        3. listView에 adapter를 셋팅한다.
+        4. listView에 listener를 달아준다.
+         */
 
         // 1. 리스트뷰를 가져온다.
         listView = (ListView) findViewById(R.id.listView);
 
 
-        /*
         //2. 아답터를 정의한다.
+
+        /*
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_list_item_1, array);
                 //컨텍스트,             스피너에서 사용할 레이아웃,  배열 데이터
         */
+
+        // customAdapter에 대한 Activity를 별도로 생성.
         CustomAdapter adapter = new CustomAdapter(array, this);
 
 
@@ -45,6 +57,7 @@ public class ListActivity extends AppCompatActivity {
     }
 
     // 리스너 생성
+    // OnItemClickListener는 보통 각 행에 이벤트를 걸어야 할 때 사용.
     AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
         @Override   // 아이템에 대한 아이디가 필요해서 들어가는 인자가 많다. 사용할건 포지션만 사용
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

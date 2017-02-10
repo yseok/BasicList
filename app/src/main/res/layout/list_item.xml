@@ -8,13 +8,12 @@
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtNum"
-        android:layout_weight="1" />
+        android:id="@+id/txtNum" />
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtDay"
-        android:layout_weight="1" />
+        android:layout_weight="0.34" />
 </LinearLayout>

@@ -24,7 +24,11 @@ public class CustomAdapter extends BaseAdapter {
 
         // getView 함수에서 사용할 xml 레이아웃을 객체로 변환해주는 inflater를 가져온다.
        inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE); // xml파일을 메모리에 올리기 위해서는 자바 코드로 바뀐다.
-        // Inflaster는 xml을 자바코드로 변환해주는 역할을 한다.
+        // inflate 는 xml을 자바코드로 변환해주는 역할을 한다.
+        // inflate 를 사용하면 xml 에 씌여져 있는 view 의 정의를 실제 view 객체로 만드는 역할을 한다.
+
+        // getSystemService는 파라미터로 전달되는 name값에 따라서 시스템 레벨의 서비스를 제어할 수 있는 핸들을 리턴해준다.
+        // 즉, 파라미터로 어떤 값을 전달하느냐에 따라서 각기 다른 객체를 리턴해준다.
 
         this.datas = datas; // 전역변수와 지역변수가 겹치면 지역변수 앞에 this를 붙여 구분
 
@@ -34,6 +38,7 @@ public class CustomAdapter extends BaseAdapter {
      *
      * @return
      */
+    // 데이터의 총 개수
     @Override
     public int getCount() {
         return datas.length;
@@ -44,6 +49,7 @@ public class CustomAdapter extends BaseAdapter {
      * @param position
      * @return
      */
+    // String datas[]에 저장된 데이터 배열의 position값
     @Override
     public Object getItem(int position) {
         return datas[position];
@@ -54,6 +60,8 @@ public class CustomAdapter extends BaseAdapter {
      * @param position
      * @return
      */
+
+    // 선택된 리스트 아이템의 position에서 id값을 불러온다.
     @Override
     public long getItemId(int position) {
         return position;
@@ -61,6 +69,7 @@ public class CustomAdapter extends BaseAdapter {
 
     // 리스트 아답터에서 뷰는 한 행 단위이다.
     // 한 행 단위를 개발자가 직접 만들어서 시스템에 넘겨줘야 한다.
+    // 선택한 item을 view에 보여준다.
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 

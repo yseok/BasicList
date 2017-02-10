@@ -59,6 +59,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CustomViewHold
         });
 
         // cardView 애니메이션
+        // AnimationUtils에 포함된 애니메이션을 가져온다.     클릭처리, 애니메이션 등을 위해 context를 전역변수로 선언했으므로
         Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
         holder.cardView.setAnimation(animation);
 

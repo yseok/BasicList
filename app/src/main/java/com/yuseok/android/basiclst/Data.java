@@ -9,6 +9,7 @@ import java.util.Random;
  * Created by YS on 2017-01-31.
  */
 
+    // 각 리스트에 동일하게 들어갈 데이터를 Data.java에 한번에 정리.
 public class Data {
 
     private ArrayList<User> datas;

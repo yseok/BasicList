@@ -8,8 +8,11 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+// 리스트에서 한번 더 클릭했을 경우, 선택한 아이템의 정보를 보여주는 Activity
+
 public class DetailActivity extends AppCompatActivity {
 
+    // activity_detail.xml에 있는 위젯을 적용할 함수(?) 선언
     TextView txtNo, txtDay;
 
     @Override
@@ -17,6 +20,7 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        // 위젯의 아이디를 각 타입에 맞게 TextView로 캐스팅해서 위에 전역변수로 선언한 값에 넣는다.
         txtNo = (TextView) findViewById(R.id.txtNo);
         txtDay = (TextView) findViewById(R.id.txtDay);
 
